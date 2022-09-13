@@ -26,8 +26,34 @@ function findIndex (index: number, arr:number[]): number {
   return arr[index]
 }
 
+function log(msg:any): void { // void when nothing is being returned 
+  console.log(msg)
+}
+
 let finalNumber:number = findIndex(1, numberOfStudents)
-console.log(finalNumber + 1)
+// log(finalNumber + 1)
+// log("yep. its not going to return something")
+
+const complexObject: any = {name: "Justin", height: "yes please"}
+
+interface Human {
+  name: string
+  height: string
+}
+
+interface Teacher extends Human { 
+  age: number
+  weight?: string
+}
+
+const complexObject2: Teacher = {name: "Justin", height: "yes please", age: 49, weight: "200"}
+
+function displayTeacher(teacher: Teacher): string {
+  return `This teacher is ${teacher.age} old`
+}
+
+log(complexObject2)
+
 
 
 // console.log('Hello Typescript', age)
